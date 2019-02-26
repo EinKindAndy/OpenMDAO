@@ -40,12 +40,12 @@ addons:
     ssh_known_hosts:
     - web543.webfaction.com
 
-cache:
-  apt: true
-  timeout: 300
-  directories:
-    - $HOME/.cache/pip
-    - $HOME/miniconda
+# cache:
+#   apt: true
+#   timeout: 300
+#   directories:
+#     - $HOME/.cache/pip
+#     - $HOME/miniconda
 
 # notifications:
 #   slack:

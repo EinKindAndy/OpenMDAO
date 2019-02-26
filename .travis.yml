@@ -14,6 +14,8 @@ os:
 language: generic
 
 env:
+  global:
+    - secure: kHCDggr/dBkuYr+bzw7dwrErM+iE709qT7pyPdGUJYcY18c6wptoL+K7hv83PPnPHctfAPioDc2EQ8X9+o1Ki3ry9k/t5qnhuaJz5pjt7PJr1FI6QhlAAgbaSWRhQLs4+94hs0iTkMjcBAxwAp6kqsgIc6EOpJBndb6N++xX4oXFop2PMdDERUSL0wRlTZ9xYd7yFn1bw3dbwMt50im65Te1bUOErc/Yxz2zGY7Z9cpsrsjk0fbrsxK5pup6p0TgrRpCjcFhSG9xdy9Bu3xLibj+Tm7T8STg9Fr3ax+y/ZqeHggB16DznGBlSx6kz62YQlKcE+QB9BTKe7WWSNOBdkKaRPC07F43Y8ozehg8bQ6dFURbHSzvL49HbFux6aRq/IdhK7hqNc2bGQ08YorNHxTg6rkUv6pCCsjAYPNitEBbiy3oIKgyqC7TGT5aiNmMFbb0VnCPIszDDNeEfqxdMtMPkBf+HkZL6me4eE67Rz5r8QltO2MXOqxatuSHqHD4ivOv0wvNiRwk5C1ge3kWJxBVPhD+zLK6w4F4zhRoNsKSVE/5xUOX5tbMK39ZfrQhv1i3p9pUO9iVNNrDFvadXlzFT7/q6iZBVO0CQEm8toI1W0hKTi1JON7waUmeuh/xOrOCvt+60iW48DFTdfOaaClvtbG5F/WrECl9/OvZfUY=
   matrix:
     - PY=2.7 NUMPY=1.12 SCIPY=1.1
     - PY=2.7 NUMPY=1.13 SCIPY=1.1 PETSc=3.8.1
@@ -108,6 +110,8 @@ install:
     echo "  > Cloning pyOptSparse from OpenMDAO's fork";
     git clone https://github.com/OpenMDAO/pyoptsparse.git;
     cd pyoptsparse;
+
+    echo "$SNOPT_LOCATION"
 
     if [ "$SNOPT_LOCATION" ] && [ "${PY:0:1}" = "3" ]; then
       cd pyoptsparse/pySNOPT;
